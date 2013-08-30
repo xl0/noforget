@@ -28,7 +28,12 @@ $page_title='Index';
 require_once('inc/head.php');
 ?>
 <h2>NoForget!</h2>
+<!--
 <p class='center'><a href='admin.php'>admin page</a></p>
+-->
+<br />
+<br />
+<br />
 
 <div id='accordion'>
 <?php
