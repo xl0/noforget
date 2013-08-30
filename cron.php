@@ -26,7 +26,6 @@
 // or put this in your crontab
 // # send noforget email everyday 6:00 AM
 // # 0 6 * * * php /var/www/noforget/cron.php
-
 require_once('inc/common.php');
 require_once('lib/swift_required.php');
 
@@ -140,14 +139,18 @@ while ($events = $req->fetch()) {
             $body = str_replace(':lastname', $individual['lastname'], $body);
             $body = str_replace(':fullname', $individual['firstname'].' '.$individual['lastname'], $body);
             $body = str_replace(':room', $room['room_name'], $body);
+            // deal with html special chars
+            $body = htmlspecialchars_decode($body, ENT_QUOTES);
+            $subject = htmlspecialchars_decode($event_type['mail_subject'], ENT_QUOTES);
 
             // SENDING EMAIL
             $message = Swift_Message::newInstance()
-            ->setSubject($event_type['mail_subject'])
+            ->setSubject($subject)
             ->setFrom($from)
             ->setBody($body.$footer);
                 
             $transport = Swift_SmtpTransport::newInstance($ini_arr['smtp_address'], $ini_arr['smtp_port'], $ini_arr['smtp_encryption'])
+
                 ->setUsername($ini_arr['smtp_username'])
                 ->setPassword($ini_arr['smtp_password']);
                 $mailer = Swift_Mailer::newInstance($transport);
@@ -221,10 +224,13 @@ while ($events = $req->fetch()) {
         $body = str_replace(':speaker', $individuals_list, $body);
         $body = str_replace(':room', $room['room_name'], $body);
 
+        // deal with html special chars
+        $body = htmlspecialchars_decode($body, ENT_QUOTES);
+        $subject = htmlspecialchars_decode($event_type['mail_subject'], ENT_QUOTES);
 
         // SENDING EMAIL
         $message = Swift_Message::newInstance()
-        ->setSubject($event_type['mail_subject'])
+        ->setSubject($subject)
         ->setFrom($from)
         ->setBody($body.$footer);
             
@@ -315,9 +321,13 @@ while ($events = $req2->fetch()) {
         $body = str_replace(':fullname', $individual['firstname'].' '.$individual['lastname'], $body);
         $body = str_replace(':room', $room['room_name'], $body);
 
+        // deal with html special chars
+        $body = htmlspecialchars_decode($body, ENT_QUOTES);
+        $subject = htmlspecialchars_decode($event_type['mail_subject'], ENT_QUOTES);
+
     // SENDING EMAIL
     $message = Swift_Message::newInstance()
-    ->setSubject($event_type['mail_subject'])
+    ->setSubject($subject)
     ->setFrom($from)
     ->setBody($body.$footer);
         
