@@ -1,0 +1,4 @@
+AuthUserFile /var/www/noforget/admin/.htpasswd
+AuthName "Are you admin ?"
+AuthType Basic
+Require user admin

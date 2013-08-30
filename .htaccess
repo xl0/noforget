@@ -1,0 +1,11 @@
+# .htaccess for noforget
+# AllowOverride must be set to All in Apache config
+
+# FORBID SERVING THE CONFIG FILE
+<Files "*.ini">
+order deny,allow
+deny from all
+</Files>
+
+# DO NOT SHOW DIRECTORIES
+Options -Indexes

@@ -1,0 +1,30 @@
+; config.ini
+; General configuration file for noforget
+;
+[general]
+
+[database]
+; Host (generally localhost)
+db_host = localhost
+; Name of the database
+db_name = DATABASE_NAME
+; Username
+db_user = DATABASE_USER
+; Password
+db_password = DATABASE_PASSWORD
+
+[mailer]
+; SMTP server address
+smtp_address = smtp.gmail.com
+; Port
+smtp_port = 587
+; Can be 'tls' or 'ssl'
+smtp_encryption = tls
+; Username
+smtp_username = YOUR_GMAIL_USERNAME
+; Password
+smtp_password = SECR3T
+; the From field email address
+from_email = 'john.doe@example.com'
+; the From field in email
+from = 'John Doe'

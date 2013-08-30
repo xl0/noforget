@@ -1,0 +1,252 @@
+/* CSS Document */
+#container {
+    border-radius: 20px;
+    font: 16px Verdana, Arial, Helvetica, sans-serif;
+    margin: auto;
+    opacity: 0.95;
+    padding: 10px 20px 10px 20px;
+    width: 900px;
+    border: 1px solid black;
+}
+
+section {
+    margin:20px 10px 20px 10px;
+}
+
+section.edit_event_item {
+    border: 1px solid black;
+    padding:10px 10px 10px 10px;
+}
+
+/* LINKS */
+a {
+    color:  blue;
+    text-decoration:none;
+}
+a :hover {
+    color:  red;
+}
+
+/* add page */
+section div.team {
+    border: 1px black solid;
+    border-radius:5px;
+    margin:5px;
+    padding:5px;
+}
+section div.team span {
+    background-color:#eef;
+    margin:2px;
+    line-height:200%;
+    padding:2px;
+}
+
+/* index page */
+.old {
+   /* color:#CCC; */
+    display:none;
+}
+
+.button {
+    border:1px solid #b7b7b7;
+    margin-top:7px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-family:arial, helvetica, sans-serif;
+    padding: 10px 10px 10px 10px;
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+    font-weight:bold;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #d3d3d3;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d3d3d3), color-stop(100%, #707070));
+    background-image: -webkit-linear-gradient(top, #d3d3d3, #707070);
+    background-image: -moz-linear-gradient(top, #d3d3d3, #707070);
+    background-image: -ms-linear-gradient(top, #d3d3d3, #707070);
+    background-image: -o-linear-gradient(top, #d3d3d3, #707070);
+    background-image: linear-gradient(top, #d3d3d3, #707070);
+      }
+
+.button:hover{
+    border:1px solid #a0a0a0; background-color: #bababa;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bababa), color-stop(100%, #585858));
+    background-image: -webkit-linear-gradient(top, #bababa, #585858);
+    background-image: -moz-linear-gradient(top, #bababa, #585858);
+    background-image: -ms-linear-gradient(top, #bababa, #585858);
+    background-image: -o-linear-gradient(top, #bababa, #585858);
+    background-image: linear-gradient(top, #bababa, #585858);
+}
+    
+/* GENERAL */
+.center{
+    text-align: center;
+}
+
+.align_right{
+    float: right;
+}
+
+.align_left{
+    text-align: left;
+}
+p{
+    font: 16px Verdana, Arial, Helvetica, sans-serif;
+}
+
+p a{
+    font: 16px Verdana, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+/* hr */
+hr {
+    margin: 10px 0 10px 0;
+}
+hr.flourishes {
+    background: url('../img/flourishes.png') no-repeat scroll center 0px transparent; /* -61px */
+    border: 0 none;
+    clear: both;
+    display: block;
+    height: 18px;
+    opacity: 0.8;
+}
+
+hr.tinyflourishes {
+    background: url('../img/flourishes.png') no-repeat scroll center -16px transparent; /* -61px */
+    border: 0 none;
+    clear: both;
+    display: block;
+    height: 18px;
+    margin: 18px 0 0;
+    opacity: 0.8;
+    outline: 0 none;
+}
+
+hr.rishes {
+    background: url('../img/flourishes.png') no-repeat scroll center -36px transparent; /* -61px */
+    border: 0 none;
+    clear: both;
+    display: block;
+    height: 18px;
+    margin: 18px 0 0;
+    opacity: 0.8;
+    outline: 0 none;
+}
+
+li.inline {
+    display: inline;
+}
+/* fix the list in the body */
+div.txt ol li {
+    /* !important because there is a list-style-type:none in jquery-ui */
+    list-style-type:decimal !important;
+}
+
+div.txt li {
+    /* !important because there is a list-style-type:none in jquery-ui */
+    list-style-type:square !important;
+}
+/* INFO BOX */
+.errors {
+    background-color:  #e8c5c9;
+    border:  1px solid #ab80c2;
+    border-radius: 5px;
+    color:  #b24040;
+    font: 14px Verdana, Arial;
+    padding: 7px;
+    text-shadow:  0px 1px #f3f9fc;
+}
+.infos {
+    background-color:  #ace0a8;
+    border:  1px solid #96c17f;
+    border-radius: 5px;
+    color:  #3f713a;
+    font: 14px Verdana, Arial;
+    padding: 7px;
+    text-shadow:  0px 1px #f3f9fc;
+}
+
+/* HEAD */
+#logo {
+    float: left;
+}
+
+#page_title {
+    clear: both;
+    text-align: center;
+}
+
+nav{
+    clear: both;
+    margin: -10px;
+    text-align: center;
+}
+
+nav a{
+    font-size: 20px;
+    line-height: 300%;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+}
+
+
+/* TITLES */
+h1{
+    margin-top: -5px;
+    text-align: center;
+    width: 140px;
+}
+h1 a:hover {
+    color:red;
+}
+h2 {
+    font: 24px Verdana, Arial, Helvetica, sans-serif;
+    text-align: center;
+    width: 100%;
+}
+
+h2 a:hover {
+    color:red;
+}
+h3 {
+    padding-top: 20px;
+    font: 20px Verdana, Arial, Helvetica, sans-serif;
+    margin: 0 auto 10px auto;
+}
+
+h4 {
+    display: inline;
+    font: 18px Verdana, Arial, Helvetica, sans-serif;
+}
+
+.inline {
+    display: inline;
+}
+
+img {
+    border: none;
+    position: relative;
+    top: 3px;
+}
+
+
+/* FOOTER */
+footer {
+    font-size: 11px;
+    margin: 15px 0 5px 0;
+    padding: 5px 0 5px 0;
+    text-align: center;
+}
+footer p {
+    font-size: 11px;
+    line-height: 20%;
+    text-align: center;
+}
+footer p a {
+    font-size: 11px;
+}
