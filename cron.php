@@ -25,7 +25,7 @@
 // cron.php -- Run everyday from /etc/cron.daily
 // or put this in your crontab
 // # send noforget email everyday 6:00 AM
-// # 0 6 * * * php /var/www/noforget/cron.php
+// # 0 6 * * * cd /var/www/noforget; php cron.php
 require_once('inc/common.php');
 require_once('lib/swift_required.php');
 
@@ -66,7 +66,8 @@ $from = array($ini_arr['from_email'] => $ini_arr['from']);
 $footer = '
 
 
-* This is an automatic reminder sent from NoForget *';
+* This is an automatic reminder sent from NoForget *
+* '.$ini_arr['url'].' *';
 
 /*
  * END EMAIL INVARIABLES

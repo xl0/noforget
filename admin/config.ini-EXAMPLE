@@ -2,6 +2,8 @@
 ; General configuration file for noforget
 ;
 [general]
+; url where it is installed (to put in the footer)
+url = http://noforget.example.com
 
 [database]
 ; Host (generally localhost)
