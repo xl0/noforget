@@ -316,7 +316,11 @@ while ($events = $req2->fetch()) {
         $to = array($individual['email'] => $individual['firstname']);
 
         // PARSE BODY AND REPLACE :indiv and :room
-        $body = $event_type['reminder_mail_body'];
+        if ($event_type['reminder_week_before'] == 1) {
+            $body = $event_type['reminder_mail_body'];
+        } else {
+        $body = $event_type['mail_body'];
+        }
         $body = str_replace(':firstname', $individual['firstname'], $body);
         $body = str_replace(':lastname', $individual['lastname'], $body);
         $body = str_replace(':fullname', $individual['firstname'].' '.$individual['lastname'], $body);
