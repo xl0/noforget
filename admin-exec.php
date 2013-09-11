@@ -75,6 +75,8 @@ if (isset($_POST['add_event_type'])) {
     }
     if (isset($_POST['reminder_mail_body']) && !empty($_POST['reminder_mail_body'])) {
         $reminder_mail_body= filter_var($_POST['reminder_mail_body'], FILTER_SANITIZE_STRING);
+    } else {
+        $reminder_mail_body= null;
     }
     $reminder_team_id = '';
     if (isset($_POST['reminder_team_id']) && !empty($_POST['reminder_team_id'])) {
@@ -142,7 +144,7 @@ if (isset($_POST['edit_event_type'])) {
     if (isset($_POST['reminder_mail_body']) && !empty($_POST['reminder_mail_body'])) {
         $reminder_mail_body = filter_var($_POST['reminder_mail_body'], FILTER_SANITIZE_STRING);
     } else {
-        die('You need to input some text.');
+        $reminder_mail_body = null;
     }
     if (isset($_POST['reminder_team_id']) && !empty($_POST['reminder_team_id'])) {
         foreach($_POST['reminder_team_id'] as $id) {
