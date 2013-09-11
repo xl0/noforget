@@ -241,8 +241,6 @@ while ($events = $req->fetch()) {
             $mailer = Swift_Mailer::newInstance($transport);
 
            if ($debug) {
-                echo "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaato :";
-                print_r($to);
                echo 'ROUND 1 : Sent to : '.var_dump($to).'<br />
                    Type : '.$events['type'].' in '.$room['room_name'].'<br />
                    Subject : '.$event_type['mail_subject'].' <br />
