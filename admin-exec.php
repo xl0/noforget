@@ -153,8 +153,10 @@ if (isset($_POST['edit_event_type'])) {
     } else {
         $reminder_team_id = null;
     }
+
+
+    $reminder_week_before = 0;
     if (isset($_POST['reminder_week_before']) && !empty($_POST['reminder_week_before'])) {
-        $reminder_week_before = 0;
         if ($_POST['reminder_week_before'] == 1) {
             $reminder_week_before = 1;
         }

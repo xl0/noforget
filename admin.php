@@ -184,8 +184,11 @@ Filter by type of event :
             ?>
              />
             <p>Body of the reminder email that will be sent a week before :</p>
-            <textarea name='reminder_mail_body' cols='42' rows='15' /><?php echo $events_types['reminder_mail_body'];?>
-            </textarea><br />
+            <textarea name='reminder_mail_body' cols='42' rows='15' /><?php
+            if (!is_null($events_types['reminder_mail_body'])) {
+                echo $events_types['reminder_mail_body'];
+            }
+?></textarea><br />
             <input type='hidden' name='edit_event_type' />
             <input type='hidden' name='event_type_id' value='<?php echo $events_types['id']; ?>' />
             </form>
