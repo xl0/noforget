@@ -111,6 +111,7 @@ while ($events = $req->fetch()) {
     $event_type = $event_type_req->fetch();
 
     // If there is no team to be reminded, we loop on each individual
+    // (event is not a labmeeting)
     if ($event_type['reminder_team_id'] === null) {
         // LOOP ON THE LIST OF INDIVIDUALS
         // create array with indiv id
@@ -221,7 +222,7 @@ while ($events = $req->fetch()) {
         $body = $event_type['mail_body'];
         $body = str_replace(':firstname', $individual['firstname'], $body);
         $body = str_replace(':lastname', $individual['lastname'], $body);
-        $body = str_replace(':fullname', $individual['firstname'].' '.$individual['lastname'], $body);
+        $body = str_replace(':fullname', $individuals_list, $body);
         $body = str_replace(':speaker', $individuals_list, $body);
         $body = str_replace(':room', $room['room_name'], $body);
 
