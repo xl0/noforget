@@ -108,7 +108,7 @@ Filter by type of event :
             Name : <input name='name' /><br />
             Subject of email : <input name='mail_subject' /><br />
             Text of email :<br />
-            You can use :firstname, :lastname, :fullname, :room as jokers.<br />
+            You can use :firstname, :lastname, :fullname, :room and :date as jokers.<br />
             <textarea name='mail_body' cols='42' rows='15' /></textarea><br />
             Send a reminder the day before to team(s) :
             <ul>
@@ -151,7 +151,7 @@ Filter by type of event :
             echo "Subject of email : <input name='mail_subject' value='".$events_types['mail_subject']."' /><br />";
             echo "<div class='align_right'><input type='submit' class='button' value='Edit this event' /></div>";
             echo "Text of email :<br />
-                You can use :firstname, :lastname, :fullname, :room as jokers.<br /><textarea cols='42' rows='15' name='mail_body' />".$events_types['mail_body']."</textarea><br />";
+                You can use :firstname, :lastname, :fullname, :room and :date as jokers.<br /><textarea cols='42' rows='15' name='mail_body' />".$events_types['mail_body']."</textarea><br />";
             echo "For labmeetings, send reminders to team :";
             echo "<ul>";
             $team_sql = "SELECT id, team_name FROM teams";

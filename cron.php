@@ -45,13 +45,15 @@ if(php_sapi_name() != 'cli' || !empty($_SERVER['REMOTE_ADDR'])) {
 // TODAY
 $today = date_create(date('ymd'));
 // TOMORROW
-$tomorrow = date_add($today, date_interval_create_from_date_string('1 day'));
-if ($debug) { echo "Tomorrow = ".date_format($tomorrow, 'ymd')."<br />"; }
-$tomorrow = date_format($tomorrow, 'ymd');
+$tomorrow_obj = date_add($today, date_interval_create_from_date_string('1 day'));
+if ($debug) { echo "Tomorrow = ".date_format($tomorrow_obj, 'ymd')."<br />"; }
+$tomorrow = date_format($tomorrow_obj, 'ymd');
+$tomorrow_dmy = date_format($tomorrow_obj, 'd/m/Y (D)');
 // NEXTWEEK is in fact J-4
 $nextweek_obj = date_add($today, date_interval_create_from_date_string('4 days'));
 if ($debug) { echo "Nextweek = ".date_format($nextweek_obj, 'ymd')."<br /><hr>"; }
 $nextweek = date_format($nextweek_obj, 'ymd');
+$nextweek_dmy = date_format($nextweek_obj, 'd/m/Y (D)');
 
 /*
  * END DATES
@@ -141,6 +143,7 @@ while ($events = $req->fetch()) {
             $body = str_replace(':lastname', $individual['lastname'], $body);
             $body = str_replace(':fullname', $individual['firstname'].' '.$individual['lastname'], $body);
             $body = str_replace(':room', $room['room_name'], $body);
+            $body = str_replace(':date', $tomorrow_dmy, $body);
             // deal with html special chars
             $body = htmlspecialchars_decode($body, ENT_QUOTES);
             $subject = htmlspecialchars_decode($event_type['mail_subject'], ENT_QUOTES);
@@ -225,6 +228,7 @@ while ($events = $req->fetch()) {
         $body = str_replace(':fullname', $individuals_list, $body);
         $body = str_replace(':speaker', $individuals_list, $body);
         $body = str_replace(':room', $room['room_name'], $body);
+	$body = str_replace(':date', $tomorrow_dmy, $body);
 
         // deal with html special chars
         $body = htmlspecialchars_decode($body, ENT_QUOTES);
@@ -326,6 +330,7 @@ while ($events = $req2->fetch()) {
         $body = str_replace(':lastname', $individual['lastname'], $body);
         $body = str_replace(':fullname', $individual['firstname'].' '.$individual['lastname'], $body);
         $body = str_replace(':room', $room['room_name'], $body);
+        $body = str_replace(':date', $nextweek_dmy, $body);
 
         // deal with html special chars
         $body = htmlspecialchars_decode($body, ENT_QUOTES);
